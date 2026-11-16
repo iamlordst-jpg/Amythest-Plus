@@ -1,0 +1,3 @@
+This branch is retained for development, source files, build configuration, and GitHub Actions workflows.
+
+It is not the primary project page or the recommended branch for general browsing. See the `main` branch for the official project README and project information.
