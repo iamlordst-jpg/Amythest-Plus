@@ -1,55 +1,86 @@
 # Amethyst+
 
-**A customized iOS Minecraft: Java Edition launcher, built on Amethyst.**
+**A more capable Minecraft: Java Edition launcher experience for iOS.**
 
-Amethyst+ is a community-maintained iOS launcher project based on [Amethyst-Offline](https://github.com/DumDum192/Amethyst-Offline) and [Amethyst-iOS](https://github.com/AngelAuraMC/Amethyst-iOS), with a built-in **Modrinth browser** for discovering Minecraft mods.
+Amethyst+ is an independent, community-maintained project built on the Amethyst iOS launcher foundation. It extends the familiar launcher with a native-feeling mod discovery and download experience, bringing together **Modrinth and CurseForge** in one place.
 
-The goal is simple: keep the familiar Amethyst foundation while making the experience more convenient and giving the project its own identity.
+The feature-rich implementation is currently developed on the **[`experimental-stlauncher` branch](https://github.com/iamlordst-jpg/STLauncher/tree/experimental-stlauncher)**. Select that branch when building to try the full ST Mod Browser feature set.
 
 ## Features
 
-- **Minecraft: Java Edition on iOS** — launch Java Edition through the Amethyst iOS foundation.
-- **Built-in Modrinth browser** — discover mods from Modrinth without having to leave the launcher.
-- **Custom project** — maintained as its own community fork, with its own changes and direction.
-- **Automated iOS builds** — GitHub Actions builds the project and uploads the generated packages as workflow artifacts.
+### Unified Mod Browser
 
-## Downloads
+- Search Minecraft projects on **Modrinth and CurseForge**.
+- Browse project details, descriptions, galleries, versions, dependencies, and downloadable files.
+- View project images in an in-app gallery.
+- Filter results by Minecraft version and mod loader.
+- Sort by relevance, download count, or recently updated.
+- Browse a cleaner native iOS interface with dedicated filter controls.
+- Cache project icons and thumbnails to reduce repeat loading while browsing.
 
-There are currently no official release downloads documented here.
+### More than mods
 
-To get the latest available build:
+With **Advanced Mod Search** enabled, the browser can also discover:
+- Resource packs
+- Shaders
+- Data packs
+
+Advanced Search also exposes Modrinth client/server compatibility filters. It is an optional setting and is off by default.
+
+### Download Manager
+
+- Track downloads with status and progress information.
+- Keep downloads running in the background when **Background Downloads** is enabled.
+- Review downloads and downloaded files from the Download Manager.
+- Open the saved-file location and remove downloaded files or history entries.
+- Avoid overwriting an existing file when the same filename is downloaded again.
+- Organize saved files under `Documents/ST Mod Browser/` by project type.
+
+Downloads are saved as files; they are **not automatically installed** into a Minecraft instance.
+
+### Library: Favorites & Collections
+
+- Save projects to Favorites.
+- Create named Collections to organize projects.
+- Add projects to collections from the project actions.
+- Revisit saved projects from the Library.
+
+Favorites and Collections are enabled by default.
+
+### Optional Turbo Downloads
+
+Turbo Downloads is an optional setting, off by default. When enabled, it raises the per-host connection limit, gives download tasks higher priority, and allows more time for transfers to finish. Actual download speed still depends on the server and your network.
+
+## Building on iPhone
+
+Amethyst+ uses GitHub Actions to build iOS packages, so you can start a build directly from an iPhone without needing a Mac.
 
 1. Open the [iOS Actions workflow](https://github.com/iamlordst-jpg/STLauncher/actions/workflows/ios.yml).
-2. Select a successful workflow run.
-3. Find the **Artifacts** section at the bottom of the run.
-4. Download the package you need.
+2. Choose the **`experimental-stlauncher`** branch in the branch selector.
+3. Run the workflow, or open an existing successful run.
+4. Download the IPA from the run's **Artifacts** section.
+5. Install and sign it with your usual iPhone workflow, such as LiveContainer or SideStore.
 
-Build artifacts are development outputs. Availability and compatibility can vary between commits.
+Build artifacts are development builds. Their availability and compatibility can change between commits.
 
-## Building
+## Project status
 
-The iOS build is automated through GitHub Actions.
+The full ST Mod Browser feature set described above is on the **[`experimental-stlauncher` branch](https://github.com/iamlordst-jpg/STLauncher/tree/experimental-stlauncher)**. The default `main` branch may not contain the same set of changes yet. Check the branch you select before building.
 
-1. Open the [iOS workflow](.github/workflows/ios.yml).
-2. Select **Run workflow** (or push a commit to trigger a build).
-3. Wait for the workflow to finish.
-4. Download the generated artifacts from the workflow run.
+## Credits & foundations
 
-The workflow checks out the repository and its submodules, applies the project patches, and builds the iOS packages on a macOS runner.
+Amethyst+ builds on existing open-source projects and acknowledges their original work:
 
-## Project background
-
-Amethyst+ is based on existing open-source work rather than being a launcher built entirely from scratch. The upstream projects provide the foundation; this repository maintains its own customizations.
-
-- [Amethyst-Offline](https://github.com/DumDum192/Amethyst-Offline) — upstream fork and offline-oriented project.
-- [Amethyst-iOS](https://github.com/AngelAuraMC/Amethyst-iOS) — iOS launcher foundation.
-- [Modrinth](https://modrinth.com/) — mod discovery and distribution platform.
+- [Amethyst-Offline](https://github.com/DumDum192/Amethyst-Offline)
+- [Amethyst-iOS](https://github.com/AngelAuraMC/Amethyst-iOS)
+- [Modrinth](https://modrinth.com/)
+- [CurseForge](https://www.curseforge.com/)
 
 Please review the upstream projects' documentation and licenses when using, modifying, or redistributing their code.
 
 ## Disclaimer
 
-Amethyst+ is an independent community project and is not an official Minecraft, Mojang, or Microsoft product. Minecraft is a trademark of Mojang Synergies AB.
+Amethyst+ is an independent community project. It is not affiliated with or endorsed by Mojang Studios, Microsoft, Modrinth, or CurseForge. Minecraft is a trademark of Mojang Synergies AB.
 
 ---
 
